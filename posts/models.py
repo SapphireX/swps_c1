@@ -12,3 +12,6 @@ class Topic(models.Model):
     name = models.CharField(max_length=60)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created']

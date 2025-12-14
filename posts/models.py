@@ -10,6 +10,10 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ['name']  # Sortowanie alfabetyczne po nazwie
+
+    def __str__(self):
+        return self.name
 
 
 class Topic(models.Model):
@@ -18,7 +22,10 @@ class Topic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['name']  # Sortowanie alfabetyczne po nazwie
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -43,4 +50,9 @@ class Post(models.Model):
         ordering = ['-created_at']  # Sortuj od najnowszych
 
     def __str__(self):
-        return self.title  
+        # Zwróć pierwsze 5 wyrazów tekstu + '...' jeżeli dłuższy
+        words = self.text.split()
+        if len(words) <= 5:
+            return ' '.join(words)
+        else:
+            return ' '.join(words[:5]) + ' ...'  

@@ -26,6 +26,7 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.name
+        ordering = ['-created']
 
 
 class Post(models.Model):
@@ -56,3 +57,4 @@ class Post(models.Model):
             return ' '.join(words)
         else:
             return ' '.join(words[:5]) + ' ...'  
+        return self.title  

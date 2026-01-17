@@ -9,7 +9,8 @@
       "Bash(python manage.py:*)",
       "Bash(python manage.py shell:*)",
       "Bash(pip install:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git -C \"C:\\\\Users\\\\LeszekPC\\\\swps_c1\" log --oneline -10)"
     ],
     "deny": [],
     "ask": []

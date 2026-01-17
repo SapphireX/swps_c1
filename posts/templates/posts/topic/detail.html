@@ -1,0 +1,9 @@
+{% extends "posts/base.html" %}
+
+{% block title %}{{ topic.name }}{% endblock %}
+
+{% block content %}
+<p>Nazwa: {{ topic.name }}</p>
+<p>Kategoria: {{ topic.category.name }}</p>
+<p>Data utworzenia: {{ topic.created }}</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "posts/base.html" %}
+
+{% block title %}Posty dla topiku: {{ topic.name }}{% endblock %}
+
+{% block content %}
+<h2>Posty dla topiku: {{ topic.name }}</h2>
+<p>Kategoria: {{ topic.category.name }}</p>
+<hr>
+{% for post in posts %}
+<p>Tytuł: {{ post.title }}</p>
+<p>Treść: {{ post.text }}</p>
+<p>Autor: {{ post.created_by }}</p>
+<p>Data utworzenia: {{ post.created_at }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

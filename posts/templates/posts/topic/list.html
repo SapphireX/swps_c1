@@ -1,0 +1,13 @@
+{% extends "posts/base.html" %}
+
+{% block title %}Lista obiektów Topic{% endblock %}
+
+{% block content %}
+Lista topików:
+{% for topic in topics %}
+<p>Nazwa: {{ topic.name }}</p>
+<p>Kategoria: {{ topic.category.name }}</p>
+<p>Data utworzenia: {{ topic.created }}</p>
+<hr>
+{% endfor %}
+{% endblock %}
